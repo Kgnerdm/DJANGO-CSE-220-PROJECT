@@ -1,0 +1,28 @@
+{% extends 'medicines/base.html' %}
+{% load static %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <h1>Welcome to Our Pharmacy</h1>
+    <div style="display: flex; flex-wrap: wrap; margin-top: 20px;">
+        {% for product in products %}
+            <div style="display: flex; flex-direction: column; justify-content: space-between; border: 1px solid #ddd; border-radius: 8px; padding: 16px; margin: 8px; width: calc(33% - 16px); box-sizing: border-box;">
+                <div>
+                    <img src="{{ product.photo.url }}" alt="{{ product.name }}" style="width: 100%; height: auto; border-radius: 8px;">
+                    <h2>{{ product.name }}</h2>
+                    <p>{{ product.description }}</p>
+                    <p>Price: ${{ product.price }}</p>
+                </div>
+                <div>
+                    <a href="{% url 'home_product_detail' product.id %}" class="button" style="margin-top: auto;">Buy now</a>
+                    {% if user.is_superuser %}
+                        <a href="{% url 'edit_home_product' product.id %}" class="button" style="margin-top: 10px;">Edit</a>
+                        <a href="{% url 'delete_home_product' product.id %}" class="button" style="background-color: red; margin-top: 10px;">Delete</a>
+                    {% endif %}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
+

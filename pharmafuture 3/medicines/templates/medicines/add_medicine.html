@@ -1,0 +1,13 @@
+{% extends 'medicines/base.html' %}
+
+{% block title %}Add Medicine{% endblock %}
+
+{% block content %}
+    <h1>Add a New Medicine</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="button">Add Medicine</button>
+    </form>
+{% endblock %}
+

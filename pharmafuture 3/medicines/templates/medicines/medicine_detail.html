@@ -1,0 +1,13 @@
+{% extends 'medicines/base.html' %}
+{% load static %}
+
+{% block title %}{{ medicine.name }}{% endblock %}
+
+{% block content %}
+    <h1>{{ medicine.name }}</h1>
+    <img src="{{ medicine.photo.url }}" alt="{{ medicine.name }}" style="width: 100%; height: auto; border-radius: 8px;">
+    <p>{{ medicine.description }}</p>
+    <p>Price: ${{ medicine.price }}</p>
+    <a href="#" class="button">Add to Cart</a>
+{% endblock %}
+

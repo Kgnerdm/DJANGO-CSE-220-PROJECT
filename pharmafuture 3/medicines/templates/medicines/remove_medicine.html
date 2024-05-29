@@ -1,0 +1,15 @@
+{% extends 'medicines/base.html' %}
+{% load static %}
+
+{% block title %}Remove Medicine{% endblock %}
+
+{% block content %}
+    <h1>Remove Medicine</h1>
+    <p>Are you sure you want to remove {{ medicine.name }}?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="button" style="background-color: red;">Yes, remove</button>
+        <a href="{% url 'medicine_list' %}" class="button">No, go back</a>
+    </form>
+{% endblock %}
+

@@ -1,0 +1,13 @@
+{% extends 'medicines/base.html' %}
+
+{% block title %}Edit Home Product{% endblock %}
+
+{% block content %}
+    <h1>Edit Home Product</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="button">Save Changes</button>
+    </form>
+{% endblock %}
+

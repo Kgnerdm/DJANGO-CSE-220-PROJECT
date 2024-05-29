@@ -1,0 +1,24 @@
+{% extends 'medicines/base.html' %}
+{% load static %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <h1>Welcome to Our Pharmacy</h1>
+    <div style="display: flex; flex-wrap: wrap; margin-top: 20px;">
+        <div style="border: 1px solid #ddd; border-radius: 8px; padding: 16px; margin: 8px; width: calc(33% - 16px); box-sizing: border-box;">
+            <img src="{% static 'img/bandage.jpg' %}" alt="Bandage" style="width: 100%; height: auto; border-radius: 8px;">
+            <h2>Bandage</h2>
+            <p>High-quality bandages for all types of wounds.</p>
+            <a href="#" class="button">Buy now</a>
+        </div>
+        <div style="border: 1px solid #ddd; border-radius: 8px; padding: 16px; margin: 8px; width: calc(33% - 16px); box-sizing: border-box;">
+            <img src="{% static 'img/gauze.jpg' %}" alt="Gauze" style="width: 100%; height: auto; border-radius: 8px;">
+            <h2>Gauze</h2>
+            <p>Sterile gauze pads for medical use.</p>
+            <a href="#" class="button">Buy now</a>
+        </div>
+        <!-- Add more items as needed -->
+    </div>
+{% endblock %}
+

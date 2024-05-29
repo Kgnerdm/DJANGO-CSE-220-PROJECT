@@ -1,0 +1,15 @@
+{% extends 'medicines/base.html' %}
+{% load static %}
+
+{% block title %}{{ product.name }}{% endblock %}
+
+{% block content %}
+    <h1>{{ product.name }}</h1>
+    <div style="display: flex; flex-direction: column; align-items: center;">
+        <img src="{{ product.photo.url }}" alt="{{ product.name }}" style="width: 50%; height: auto; border-radius: 8px;">
+        <p>{{ product.description }}</p>
+        <p>Price: ${{ product.price }}</p>
+        <a href="#" class="button">Buy now</a>
+    </div>
+{% endblock %}
+
